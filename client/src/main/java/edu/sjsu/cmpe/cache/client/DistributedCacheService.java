@@ -55,7 +55,7 @@ public class DistributedCacheService implements CacheServiceInterface {
 
     //Async READ start
     @Override
-    public String asyncRead(long key) {
+    public String asyncGET(long key) {
 
         final CountDownLatch counter = new CountDownLatch(serverCount);
         HttpResponse<JsonNode> response = null;
@@ -172,7 +172,7 @@ public class DistributedCacheService implements CacheServiceInterface {
 
     // ASynchronous WRITE start
     @Override
-    public void asyncWrite(long key, String value) {
+    public void asyncPUT(long key, String value) {
 
         try {
             final List<String> successfulServers = new ArrayList<String>();
